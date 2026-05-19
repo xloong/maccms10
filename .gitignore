@@ -13,4 +13,6 @@ nohup*
 .wepycache
 .well-known
 /upload
+/runtime
+/application/data/install/install.lock
 node_modules/

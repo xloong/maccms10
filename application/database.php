@@ -1,4 +1,5 @@
 <?php
+use think\Env;
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
@@ -12,15 +13,15 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => Env::get('db_host', '127.0.0.1'),
     // 数据库名
-    'database'        => 'maccms10',
+    'database'        => Env::get('db_name', 'maccms10'),
     // 用户名
-    'username'        => 'root',
+    'username'        => Env::get('db_user', 'root'),
     // 密码
-    'password'        => 'root',
+    'password'        => Env::get('db_pass', 'root'),
     // 端口
-    'hostport'        => '3306',
+    'hostport'        => Env::get('db_port', '3306'),
     // 连接dsn
     'dsn'             => '',
     // 数据库连接参数
@@ -28,7 +29,7 @@ return [
     // 数据库编码默认采用utf8
     'charset'         => 'utf8',
     // 数据库表前缀
-    'prefix'          => 'mac_',
+    'prefix'          => Env::get('db_prefix', 'mac_'),
     // 数据库调试模式
     'debug'           => false,
     // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
